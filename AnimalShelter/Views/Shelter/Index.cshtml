@@ -1,0 +1,19 @@
+@using AnimalShelter.Models;
+@using System;
+
+<h1>All our Animals</h1>
+
+@if (Model.Count == 0)
+{
+  <h3>The shelter has no animals.</h3>
+}
+@foreach(var shelter in Model)
+{
+  <table>
+    <th>@shelter.GetName()</th>
+    <th>@shelter.GetType()</th>
+    <th>@shelter.GetBreed()</th>
+    <th>@shelter.GetDate()</th>
+  </table>
+}
+<p><a href='/'>Return to Main Page</a></p>
